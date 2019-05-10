@@ -94,6 +94,7 @@ public class Model extends BaseAdapter
         name.setText(this.list.get(position).getName());
 
 
+
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {

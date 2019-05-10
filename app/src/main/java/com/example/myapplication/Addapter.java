@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Addapter extends FragmentPagerAdapter {
     private List<Question> list;
-    static int current_item;
+    public static int current_item;
 
     public Addapter(FragmentManager mgr, List<Question> l) {
         super(mgr);

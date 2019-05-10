@@ -6,6 +6,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -28,9 +29,20 @@ public class Main3Activity extends AppCompatActivity {
         ViewPager pager=(ViewPager)findViewById(R.id.pager);
         pager.setAdapter(new Addapter(getSupportFragmentManager(),quest));
 
+
     }
 
-
+    public void OnAnsBCclick(View view)
+    {
+        EditText text=(EditText)findViewById(R.id.Tedit);
+        if(text.getText()!=null)
+        {
+            if (quest.get(Addapter.current_item).getAnswer().equals(text.getText().toString().toLowerCase().trim()))
+                this.goodAnsw();
+            else
+                this.badAnsw();
+        }
+    }
     @Override
     public void onBackPressed() {
        finish();
