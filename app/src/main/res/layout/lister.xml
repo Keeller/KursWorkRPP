@@ -15,7 +15,8 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/lln">
 
         <Button
             android:id="@+id/btOk"
@@ -23,7 +24,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="InsData" />
+            android:onClick="InsData"
+            android:visibility="invisible"/>
 
         <Button
             android:id="@+id/btCancel"
@@ -31,7 +33,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="DeleteData" />
+            android:onClick="DeleteData"
+            android:visibility="invisible"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="login"
+            android:text="Войти как преподаватель"
+            android:visibility="visible"/>
 
     </LinearLayout>
 

@@ -43,6 +43,7 @@ public class Main3Activity extends AppCompatActivity {
         pager.setAdapter(new Addapter(getSupportFragmentManager(),quest));
 
 
+
     }
 
     public void OnAnsBCclick(View view)

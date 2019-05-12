@@ -37,6 +37,7 @@
         android:layout_height="wrap_content"
         android:text="Добавить"
         android:onClick="OnAddBCclick"
+        android:visibility="invisible"
         />
     <Button
         android:id="@+id/Delb"
@@ -44,6 +45,7 @@
         android:layout_height="wrap_content"
         android:text="Удалить"
         android:onClick="DelQuest"
+        android:visibility="invisible"
         />
 
 

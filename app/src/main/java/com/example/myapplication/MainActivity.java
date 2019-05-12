@@ -8,6 +8,7 @@ import android.util.Log;
 
 import com.example.myapplication.model.Question;
 import com.example.myapplication.model.Test;
+import com.example.myapplication.model.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,25 +31,25 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-/*
+
+        /*
 
         Completable.fromRunnable(new Runnable() {
             @Override
             public void run() {
                 AppDatabase db=AppDatabase.getDatabace(MainActivity.this);
-                Question test=new Question();
-                test.setQuest("How are you");
-                test.setAnswer("fine");
-                test.setTestId(1);
-                db.getQuestionDao().insertAll(test);
+                User user=new User();
+                user.setLogin("Login");
+                user.setPassword("123456");
+                user.setName("Vasya");
+                user.setPremission(5);
+                db.getUserDao().insertALL(user);
             }
         }).subscribeOn(Schedulers.io()).subscribe();
-*/
-
+        */
 
         as =new AsynTask();
         as.execute(this);
-
 
 
     }

@@ -45,6 +45,7 @@ public class Model extends BaseAdapter
     List<Test> list;
     public static int current_position=0;
     private Asyn2Task as;
+    public static User user;
 
 
 
@@ -52,6 +53,7 @@ public class Model extends BaseAdapter
 
         this.context = context;
         this.list=l;
+
 
 
 

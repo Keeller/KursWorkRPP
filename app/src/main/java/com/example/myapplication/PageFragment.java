@@ -43,6 +43,15 @@ public class PageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_page, container, false);
+        if(Model.user!=null) {
+            if (Model.user.getPremission() > 0) {
+
+                Button btnk = (Button) view.findViewById(R.id.addb);
+                Button btnc = (Button) view.findViewById(R.id.Delb);
+                btnk.setVisibility(View.VISIBLE);
+                btnc.setVisibility(View.VISIBLE);
+            }
+        }
 
 
 
