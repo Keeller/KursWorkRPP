@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-
 /*
+
         Completable.fromRunnable(new Runnable() {
             @Override
             public void run() {
@@ -60,4 +60,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+    @Override
+    public void onBackPressed() {
+        as.cancel(true);
+        super.onBackPressed();
+    }
+
 }

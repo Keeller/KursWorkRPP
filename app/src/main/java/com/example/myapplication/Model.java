@@ -43,7 +43,7 @@ public class Model extends BaseAdapter
     Context context;
     LayoutInflater inflater;
     List<Test> list;
-    int current_position=0;
+    public static int current_position=0;
     private Asyn2Task as;
 
 
@@ -111,8 +111,15 @@ public class Model extends BaseAdapter
 
     void Load_test(List<Question> ql)
     {
-        Intent intent = new Intent(context, Main3Activity.class);
-        intent.putExtra("qlist", (ArrayList)ql);
-        context.startActivity(intent);
+        if(ql.size()!=0) {
+            Intent intent = new Intent(context, Main3Activity.class);
+            intent.putExtra("qlist", (ArrayList) ql);
+            context.startActivity(intent);
+        }
+        else
+            {
+                Intent intent = new Intent(context, Main6Activity.class);
+                context.startActivity(intent);
+            }
     }
 }

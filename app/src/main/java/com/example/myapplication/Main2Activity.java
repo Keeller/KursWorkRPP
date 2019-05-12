@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -40,6 +41,22 @@ public class Main2Activity extends AppCompatActivity {
         listview.setAdapter(model);
 
 
+    }
+
+    public void InsData(View view)
+    {
+        Intent intent=new Intent(this,Main4Activity.class);
+        intent.putExtra("list",(ArrayList)list);
+        startActivity(intent);
+        finish();
+    }
+
+    public void DeleteData(View view)
+    {
+        Intent intent=new Intent(this,Main5Activity.class);
+        intent.putExtra("list",(ArrayList)list);
+        startActivity(intent);
+        finish();
     }
 
 

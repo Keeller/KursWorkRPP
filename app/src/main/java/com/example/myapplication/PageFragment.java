@@ -13,10 +13,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.myapplication.model.Question;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PageFragment extends Fragment {
 
 
     private Question quest;
+
 
     public PageFragment() {}
 
@@ -43,7 +47,6 @@ public class PageFragment extends Fragment {
 
 
         TextView txt = (TextView) view.findViewById(R.id.displayText);
-        EditText etxt=(EditText) view.findViewById(R.id.Tedit);
         if(this.quest.getQuest() != null)
             txt.setText(this.quest.getQuest());
         else

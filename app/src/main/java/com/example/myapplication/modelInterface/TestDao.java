@@ -27,4 +27,5 @@ public interface TestDao {
 
     @Query("SELECT * FROM test WHERE id=:ident")
     List<Test> getTestById(int ident);
+    
 }
