@@ -61,6 +61,7 @@ public class SearchModel extends Model {
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
+                current_position=list.get(position).getId();
                 as = new Asyn2Task();
                 as.execute(SearchModel.this);
 
