@@ -20,9 +20,7 @@ import com.example.myapplication.model.User;
 import java.util.ArrayList;
 import java.util.List;
 
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.observers.DisposableMaybeObserver;
-import io.reactivex.schedulers.Schedulers;
+
 
 public class Main2Activity extends AppCompatActivity {
 

@@ -9,9 +9,7 @@ import com.example.myapplication.model.Test;
 
 import java.util.List;
 
-import io.reactivex.Flowable;
-import io.reactivex.Maybe;
-import io.reactivex.Single;
+
 
 @Dao
 public interface TestDao {
