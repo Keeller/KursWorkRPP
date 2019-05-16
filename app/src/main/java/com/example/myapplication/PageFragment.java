@@ -48,8 +48,12 @@ public class PageFragment extends Fragment {
 
                 Button btnk = (Button) view.findViewById(R.id.addb);
                 Button btnc = (Button) view.findViewById(R.id.Delb);
+                Button btngt=(Button)view.findViewById(R.id.Trueans);
+                Button btnup=(Button)view.findViewById(R.id.Red);
                 btnk.setVisibility(View.VISIBLE);
                 btnc.setVisibility(View.VISIBLE);
+                btngt.setVisibility(View.VISIBLE);
+                btnup.setVisibility(View.VISIBLE);
             }
         }
 

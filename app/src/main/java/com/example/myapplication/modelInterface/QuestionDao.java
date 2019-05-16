@@ -4,6 +4,7 @@ import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
+import android.arch.persistence.room.Update;
 
 import com.example.myapplication.model.Question;
 
@@ -16,6 +17,8 @@ public interface QuestionDao {
     void insertAll(Question... questions);
     @Delete
     void Delete(Question question);
+    @Update
+    void Update(Question question);
     @Query("SELECT * FROM question")
     List<Question> getALLQuestions();
     @Query("SELECT * FROM question WHERE testId=:ident")

@@ -15,12 +15,13 @@ import com.example.myapplication.modelInterface.UserDao;
 
 import io.reactivex.Single;
 
-@Database(entities = {User.class, Test.class, Question.class},version = 1)
+@Database(entities = {User.class, Test.class, Question.class},version = 2)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract UserDao getUserDao();
     public abstract TestDao getTestDao();
     public abstract QuestionDao getQuestionDao();
     private static AppDatabase db;
+
 
     public static AppDatabase getDatabace(Context context)
     {

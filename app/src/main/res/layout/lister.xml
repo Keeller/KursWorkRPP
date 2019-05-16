@@ -36,11 +36,20 @@
             android:onClick="DeleteData"
             android:visibility="invisible"/>
         <Button
+            android:id="@+id/btlog"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="login"
             android:text="Войти как преподаватель"
+            android:visibility="visible"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="Search"
+            android:text="Поиск"
             android:visibility="visible"/>
 
     </LinearLayout>

@@ -48,17 +48,22 @@ public class MainActivity extends AppCompatActivity {
         }).subscribeOn(Schedulers.io()).subscribe();
         */
 
+
+
         as =new AsynTask();
         as.execute(this);
+
 
 
     }
 
     public void CallMainAndDie(List<Test> l)
     {
-        Intent intent=new Intent(this,Main2Activity.class);
-        intent.putExtra("list",(ArrayList)l);
-        startActivity(intent);
+            Intent intent = new Intent(this, Main2Activity.class);
+            intent.putExtra("list", (ArrayList) l);
+            startActivity(intent);
+
+
         finish();
     }
     @Override

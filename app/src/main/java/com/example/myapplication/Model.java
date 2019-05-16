@@ -44,7 +44,10 @@ public class Model extends BaseAdapter
     LayoutInflater inflater;
     List<Test> list;
     public static int current_position=0;
-    private Asyn2Task as;
+
+
+
+    protected Asyn2Task as;
     public static User user;
 
 
@@ -52,6 +55,7 @@ public class Model extends BaseAdapter
     public Model(Context context,List<Test> l) {
 
         this.context = context;
+        Sort(l);
         this.list=l;
 
 
@@ -100,7 +104,7 @@ public class Model extends BaseAdapter
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                current_position=position;
+                current_position=list.get(position).getId();
                 as=new Asyn2Task();
                 as.execute(Model.this);
 
@@ -123,5 +127,20 @@ public class Model extends BaseAdapter
                 Intent intent = new Intent(context, Main6Activity.class);
                 context.startActivity(intent);
             }
+    }
+
+
+    void Sort(List<Test> arr)
+    {
+        for(int i = arr.size()-1 ; i > 0 ; i--){
+            for(int j = 0 ; j < i ; j++){
+
+            if( arr.get(j).getName().compareTo( arr.get(j+1).getName())>0 ){
+                Test tmp = arr.get(j);
+                arr.set(j,arr.get(j+1));
+                arr.set(j+1,tmp);
+            }
+        }
+    }
     }
 }

@@ -6,7 +6,9 @@ import android.arch.persistence.room.PrimaryKey;
 
 import java.io.Serializable;
 
-@Entity(foreignKeys = @ForeignKey(entity = Test.class,parentColumns = "id",childColumns = "testId"))
+import static android.arch.persistence.room.ForeignKey.CASCADE;
+
+@Entity(foreignKeys = @ForeignKey(entity = Test.class,parentColumns = "id",childColumns = "testId",onDelete = CASCADE))
 public class Question implements Serializable {
 
     @PrimaryKey(autoGenerate = true)

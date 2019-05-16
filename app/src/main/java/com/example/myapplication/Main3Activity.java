@@ -78,6 +78,32 @@ public class Main3Activity extends AppCompatActivity {
 
 
     }
+
+    public void RedQ(View view)
+    {
+        Intent intent=new Intent(this,Main9Activity.class);
+        intent.putExtra("quest",quest.get(pager.getCurrentItem()));
+        startActivity(intent);
+        finish();
+    }
+
+    public void getTrueAnsw(View view)
+    {
+        int x=pager.getCurrentItem();
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(Main3Activity.this);
+        builder.setTitle("Результат")
+                .setMessage(quest.get(x).getAnswer())
+                .setCancelable(false)
+                .setNegativeButton("ОК",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
     public void goodAnsw()
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(Main3Activity.this);

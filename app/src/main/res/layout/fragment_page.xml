@@ -48,6 +48,26 @@
         android:visibility="invisible"
         />
 
+    <Button
+        android:id="@+id/Trueans"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Показать верный ответ"
+        android:onClick="getTrueAnsw"
+        android:visibility="invisible"
+        />
+
+    <Button
+        android:id="@+id/Red"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Редактировать Вопрос"
+        android:onClick="RedQ"
+        android:visibility="invisible"
+        />
+
+
+
 
 </LinearLayout>
 
