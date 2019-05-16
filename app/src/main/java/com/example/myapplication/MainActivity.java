@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v4.util.Consumer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -50,11 +51,17 @@ public class MainActivity extends AppCompatActivity {
         }).subscribeOn(Schedulers.io()).subscribe();
         */
 
+        /*
+      Ast a=new Ast();
+      a.execute(this);
+*/
+
+
 
 
         as =new AsynTask();
         as.execute(this);
-
+        
 
 
     }
