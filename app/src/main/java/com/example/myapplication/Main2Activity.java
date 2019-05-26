@@ -46,11 +46,11 @@ public class Main2Activity extends AppCompatActivity {
                 Button btnc = (Button) findViewById(R.id.btCancel);
                 Button btnlog=(Button) findViewById(R.id.btlog) ;
                 btnk.setVisibility(View.VISIBLE);
-                btnc.setVisibility(View.VISIBLE);
                 btnlog.setVisibility(View.INVISIBLE);
 
             }
         }
+
 
         listview.setAdapter(model);
 
@@ -79,9 +79,7 @@ public class Main2Activity extends AppCompatActivity {
 
     public void DeleteData(View view)
     {
-        Intent intent=new Intent(this,Main5Activity.class);
-        intent.putExtra("list",(ArrayList)list);
-        startActivity(intent);
+
         finish();
     }
 

@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -35,8 +36,11 @@ public class Model extends BaseAdapter
     LayoutInflater inflater;
     List<Test> list;
     public static int current_position=0;
+    private Test curr;
 
-
+    public Test getCurr() {
+        return curr;
+    }
 
     protected Asyn2Task as;
     public static User user;
@@ -67,7 +71,7 @@ public class Model extends BaseAdapter
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return list.get(position);
     }
 
     @Override
@@ -89,6 +93,25 @@ public class Model extends BaseAdapter
 
         name = (TextView) itemView.findViewById(R.id.txt);
         name.setText(this.list.get(position).getName());
+
+        Button b=(Button)itemView.findViewById(R.id.btCancel);
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                curr=list.get(position);
+                AsynTask4 as=new AsynTask4();
+                as.execute(Model.this);
+            }
+        });
+
+        if(Model.user!=null) {
+            if (Model.user.getPremission() > 0) {
+                b.setVisibility(View.VISIBLE);
+
+
+            }
+
+        }
 
 
 
@@ -118,6 +141,13 @@ public class Model extends BaseAdapter
                 Intent intent = new Intent(context, Main6Activity.class);
                 context.startActivity(intent);
             }
+    }
+
+    void Reload_activity(List<Test> ql)
+    {
+        Intent intent = new Intent(context, Main2Activity.class);
+        intent.putExtra("list", (ArrayList) ql);
+        context.startActivity(intent);
     }
 
 

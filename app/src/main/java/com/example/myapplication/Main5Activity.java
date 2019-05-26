@@ -35,51 +35,13 @@ public class Main5Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main5);
         list= (ArrayList<Test>) getIntent().getExtras().getSerializable("list");
-    }
-
-
-    public void d_str(View view)
-    {
-        EditText et=(EditText)findViewById(R.id.dname);
-        if(et.getText()!=null)
-        {
-            int x=this.search(et.getText().toString());
-            if(x!=-1) {
-                curr = list.get(x);
-                as=new AsynTask4();
-                as.execute(this);
-            }
-            else
-            {
-                Toast toast = Toast.makeText(getApplicationContext(),
-                        "Not found test with this name", Toast.LENGTH_SHORT);
-                toast.show();
-            }
-
-        }
-        else
-            {
-                Toast toast = Toast.makeText(getApplicationContext(),
-                        "Tedit is Empty!", Toast.LENGTH_SHORT);
-                toast.show();
-            }
-
+        curr=((ArrayList<Test>) getIntent().getExtras().getSerializable("delel")).get(0);
 
     }
 
-    private int search(String finder)
-    {
-        for(int i=0;i<list.size();i++)
-        {
-            if(list.get(i).getName().toString().equals(finder))
-            {
-                return i;
-            }
 
 
-        }
-        return -1;
-    }
+
 
     public void finisher(List<Test> list)
     {

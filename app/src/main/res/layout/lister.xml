@@ -5,13 +5,11 @@
     android:orientation="vertical" >
 
 
-
     <ListView
         android:id="@+id/listview"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
-    </ListView>
+        android:layout_weight="1"></ListView>
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -27,14 +25,7 @@
             android:onClick="InsData"
             android:visibility="invisible"/>
 
-        <Button
-            android:id="@+id/btCancel"
-            android:text="Удалить"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="DeleteData"
-            android:visibility="invisible"/>
+
         <Button
             android:id="@+id/btlog"
             android:layout_width="wrap_content"

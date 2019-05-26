@@ -35,21 +35,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        /*
-
-        Completable.fromRunnable(new Runnable() {
-            @Override
-            public void run() {
-                AppDatabase db=AppDatabase.getDatabace(MainActivity.this);
-                User user=new User();
-                user.setLogin("Login");
-                user.setPassword("123456");
-                user.setName("Vasya");
-                user.setPremission(5);
-                db.getUserDao().insertALL(user);
-            }
-        }).subscribeOn(Schedulers.io()).subscribe();
-        */
 
         /*
       Ast a=new Ast();
@@ -61,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         as =new AsynTask();
         as.execute(this);
-        
+
 
 
     }
