@@ -6,15 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.example.myapplication.model.Test;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
 
-public class Main10Activity extends AppCompatActivity {
+public class SearchForm extends AppCompatActivity {
 
     ArrayList<Test> list;
     ListView listview;
@@ -57,7 +54,7 @@ public class Main10Activity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
 
-        Intent intent=new Intent(this,Main2Activity.class);
+        Intent intent=new Intent(this, TestList.class);
         intent.putExtra("list",(ArrayList)list);
         startActivity(intent);
         finish();

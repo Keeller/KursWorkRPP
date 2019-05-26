@@ -9,16 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Main10Activity"></activity>
-        <activity android:name=".Main9Activity" />
-        <activity android:name=".Main8Activity" />
-        <activity android:name=".Main7Activity" />
-        <activity android:name=".Main6Activity" />
+        <activity android:name=".SearchForm"></activity>
+        <activity android:name=".QuestEditForm" />
+        <activity android:name=".AutoHookForm" />
+        <activity android:name=".QuestInsertForm" />
+        <activity android:name=".QuestInsertOnEmptyTestForm" />
         <activity android:name=".Main5Activity" />
-        <activity android:name=".Main4Activity" />
-        <activity android:name=".Main3Activity" />
-        <activity android:name=".Main2Activity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".InsertTestForm" />
+        <activity android:name=".QuestForm" />
+        <activity android:name=".TestList" />
+        <activity android:name=".SplahScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

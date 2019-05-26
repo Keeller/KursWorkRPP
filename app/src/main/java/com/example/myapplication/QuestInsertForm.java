@@ -8,12 +8,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.myapplication.model.Question;
-import com.example.myapplication.model.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main7Activity extends AppCompatActivity {
+public class QuestInsertForm extends AppCompatActivity {
 
     private String qquest;
     private String qansw;
@@ -34,7 +33,7 @@ public class Main7Activity extends AppCompatActivity {
         this.qansw = qansw;
     }
 
-    AsynTask6 as;
+    QuestInsertRequest as;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +49,7 @@ public class Main7Activity extends AppCompatActivity {
         {
             qquest= etq.getText().toString();
             qansw=eta.getText().toString().toLowerCase().trim();
-            as=new AsynTask6();
+            as=new QuestInsertRequest();
             as.execute(this);
 
         }
@@ -63,7 +62,7 @@ public class Main7Activity extends AppCompatActivity {
 
     public void finisher(List<Question> list)
     {
-        Intent intent = new Intent(this, Main3Activity.class);
+        Intent intent = new Intent(this, QuestForm.class);
         intent.putExtra("qlist", (ArrayList)list);
         startActivity(intent);
         finish();

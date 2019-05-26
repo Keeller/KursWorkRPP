@@ -6,18 +6,18 @@ import com.example.myapplication.model.Test;
 
 import java.util.List;
 
-public class AsynTask extends AsyncTask<MainActivity,Void, Void>
+public class GetTestRequest extends AsyncTask<SplahScreen,Void, Void>
 {
 
 
     @Override
-    protected Void doInBackground(MainActivity... splasches) {
+    protected Void doInBackground(SplahScreen... splasches) {
 
         //Keys[] k =JsonLoader.getData();
-        MainActivity m=splasches[0];
+        SplahScreen m=splasches[0];
         //m.CallMainAndDie(k.clone());
-        MainActivity.db=AppDatabase.getDatabace(m);
-        List<Test> l=MainActivity.db.getTestDao().getAllTest();
+        SplahScreen.db=AppDatabase.getDatabace(m);
+        List<Test> l= SplahScreen.db.getTestDao().getAllTest();
         if(l!=null)
             m.CallMainAndDie(l);
         else

@@ -12,10 +12,10 @@ import com.example.myapplication.model.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main4Activity extends AppCompatActivity {
+public class InsertTestForm extends AppCompatActivity {
 
     static String input_name;
-    private  AsynTask3 as;
+    private InsertTestRequest as;
     ArrayList<Test> list;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class Main4Activity extends AppCompatActivity {
         EditText et=(EditText)findViewById(R.id.name);
         if(et.getText()!=null) {
             input_name = et.getText().toString();
-            as=new AsynTask3();
+            as=new InsertTestRequest();
             as.execute(this);
 
         }
@@ -42,7 +42,7 @@ public class Main4Activity extends AppCompatActivity {
 
     public void finisher(List<Test> list)
     {
-        Intent intent=new Intent(this,Main2Activity.class);
+        Intent intent=new Intent(this, TestList.class);
         intent.putExtra("list",(ArrayList)list);
         startActivity(intent);
         finish();
@@ -52,7 +52,7 @@ public class Main4Activity extends AppCompatActivity {
     public void onBackPressed() {
         if(as!=null)
             as.cancel(true);
-        Intent intent=new Intent(this,Main2Activity.class);
+        Intent intent=new Intent(this, TestList.class);
         intent.putExtra("list",(ArrayList)list);
         startActivity(intent);
         finish();

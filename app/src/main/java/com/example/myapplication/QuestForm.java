@@ -1,7 +1,6 @@
 package com.example.myapplication;
 
 import android.app.AlertDialog;
-import android.app.DownloadManager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v4.view.ViewPager;
@@ -9,21 +8,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
-import android.widget.Adapter;
-import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.myapplication.model.Question;
-import com.example.myapplication.model.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main3Activity extends AppCompatActivity {
+public class QuestForm extends AppCompatActivity {
 
     List<Question> quest;
     private Question q;
-    AsynTask5 as;
+    QuestDeleteRequest as;
     ViewPager pager;
 
     public Question getQ() {
@@ -73,7 +69,7 @@ public class Main3Activity extends AppCompatActivity {
     public void DelQuest(View view)
     {
         this.q=quest.get(pager.getCurrentItem());
-        as=new AsynTask5();
+        as=new QuestDeleteRequest();
         as.execute(this);
 
 
@@ -81,7 +77,7 @@ public class Main3Activity extends AppCompatActivity {
 
     public void RedQ(View view)
     {
-        Intent intent=new Intent(this,Main9Activity.class);
+        Intent intent=new Intent(this, QuestEditForm.class);
         intent.putExtra("quest",quest.get(pager.getCurrentItem()));
         startActivity(intent);
         finish();
@@ -91,7 +87,7 @@ public class Main3Activity extends AppCompatActivity {
     {
         int x=pager.getCurrentItem();
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(Main3Activity.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(QuestForm.this);
         builder.setTitle("Результат")
                 .setMessage(quest.get(x).getAnswer())
                 .setCancelable(false)
@@ -106,7 +102,7 @@ public class Main3Activity extends AppCompatActivity {
     }
     public void goodAnsw()
     {
-        AlertDialog.Builder builder = new AlertDialog.Builder(Main3Activity.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(QuestForm.this);
         builder.setTitle("Результат")
                 .setMessage("Верно")
                 .setCancelable(false)
@@ -123,14 +119,14 @@ public class Main3Activity extends AppCompatActivity {
     public void finisher(List<Question> list)
     {
         if(list.size()!=0) {
-            Intent intent = new Intent(this, Main3Activity.class);
+            Intent intent = new Intent(this, QuestForm.class);
             intent.putExtra("qlist", (ArrayList) list);
             startActivity(intent);
             finish();
         }
         else
             {
-                Intent intent = new Intent(this, Main6Activity.class);
+                Intent intent = new Intent(this, QuestInsertOnEmptyTestForm.class);
                 startActivity(intent);
                 finish();
             }
@@ -138,7 +134,7 @@ public class Main3Activity extends AppCompatActivity {
 
     public void badAnsw()
     {
-        AlertDialog.Builder builder = new AlertDialog.Builder(Main3Activity.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(QuestForm.this);
         builder.setTitle("Результат")
                 .setMessage("Не Верно")
                 .setCancelable(false)
@@ -154,7 +150,7 @@ public class Main3Activity extends AppCompatActivity {
 
     public void OnAddBCclick(View view)
     {
-        Intent intent = new Intent(this, Main7Activity.class);
+        Intent intent = new Intent(this, QuestInsertForm.class);
         startActivity(intent);
         finish();
     }

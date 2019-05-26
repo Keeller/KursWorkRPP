@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.myapplication.model.Question;
@@ -13,12 +12,12 @@ import com.example.myapplication.model.Question;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main9Activity extends AppCompatActivity {
+public class QuestEditForm extends AppCompatActivity {
 
     private String qquest;
     private String qansw;
     private Question curr_q;
-    AsynTask8 as;
+    QuestUpdateRequest as;
 
     public String getQquest() {
         return qquest;
@@ -64,7 +63,7 @@ public class Main9Activity extends AppCompatActivity {
         {
             qquest= etq.getText().toString();
             qansw=eta.getText().toString().toLowerCase().trim();
-            as=new AsynTask8();
+            as=new QuestUpdateRequest();
             as.execute(this);
 
         }
@@ -77,7 +76,7 @@ public class Main9Activity extends AppCompatActivity {
 
     public void finisher(List<Question> list)
     {
-        Intent intent = new Intent(this, Main3Activity.class);
+        Intent intent = new Intent(this, QuestForm.class);
         intent.putExtra("qlist", (ArrayList)list);
         startActivity(intent);
         finish();

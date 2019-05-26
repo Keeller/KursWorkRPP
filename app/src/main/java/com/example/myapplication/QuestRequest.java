@@ -7,7 +7,7 @@ import com.example.myapplication.model.Test;
 
 import java.util.List;
 
-public class Asyn2Task extends AsyncTask<Model,Void,Void>
+public class QuestRequest extends AsyncTask<Model,Void,Void>
 {
     @Override
     protected Void doInBackground(Model... m) {

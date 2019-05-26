@@ -1,18 +1,13 @@
 package com.example.myapplication;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.example.myapplication.model.Question;
 import com.example.myapplication.model.Test;
-import com.example.myapplication.model.User;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class SearchModel extends Model {
@@ -62,7 +57,7 @@ public class SearchModel extends Model {
             @Override
             public void onClick(View arg0) {
                 current_position=list.get(position).getId();
-                as = new Asyn2Task();
+                as = new QuestRequest();
                 as.execute(SearchModel.this);
 
 

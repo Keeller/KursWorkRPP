@@ -4,13 +4,13 @@ import android.os.AsyncTask;
 
 import com.example.myapplication.model.User;
 
-public class Ast extends AsyncTask<MainActivity,Void,Void> {
+public class Ast extends AsyncTask<SplahScreen,Void,Void> {
 
     @Override
-    protected Void doInBackground(MainActivity... splasches) {
+    protected Void doInBackground(SplahScreen... splasches) {
 
         //Keys[] k =JsonLoader.getData();
-        MainActivity m = splasches[0];
+        SplahScreen m = splasches[0];
         AppDatabase db=AppDatabase.getDatabace(m);
         User user=new User();
         user.setLogin("Login");

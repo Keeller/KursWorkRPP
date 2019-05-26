@@ -2,29 +2,19 @@ package com.example.myapplication;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.AsyncTask;
-import android.service.autofill.UserData;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.myapplication.model.Question;
 import com.example.myapplication.model.Test;
 import com.example.myapplication.model.User;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-
 
 
 public class Model extends BaseAdapter
@@ -42,7 +32,7 @@ public class Model extends BaseAdapter
         return curr;
     }
 
-    protected Asyn2Task as;
+    protected QuestRequest as;
     public static User user;
 
 
@@ -99,7 +89,7 @@ public class Model extends BaseAdapter
             @Override
             public void onClick(View v) {
                 curr=list.get(position);
-                AsynTask4 as=new AsynTask4();
+                TestDeleteRequest as=new TestDeleteRequest();
                 as.execute(Model.this);
             }
         });
@@ -119,7 +109,7 @@ public class Model extends BaseAdapter
             @Override
             public void onClick(View arg0) {
                 current_position=list.get(position).getId();
-                as=new Asyn2Task();
+                as=new QuestRequest();
                 as.execute(Model.this);
 
 
@@ -132,20 +122,20 @@ public class Model extends BaseAdapter
     void Load_test(List<Question> ql)
     {
         if(ql.size()!=0) {
-            Intent intent = new Intent(context, Main3Activity.class);
+            Intent intent = new Intent(context, QuestForm.class);
             intent.putExtra("qlist", (ArrayList) ql);
             context.startActivity(intent);
         }
         else
             {
-                Intent intent = new Intent(context, Main6Activity.class);
+                Intent intent = new Intent(context, QuestInsertOnEmptyTestForm.class);
                 context.startActivity(intent);
             }
     }
 
     void Reload_activity(List<Test> ql)
     {
-        Intent intent = new Intent(context, Main2Activity.class);
+        Intent intent = new Intent(context, TestList.class);
         intent.putExtra("list", (ArrayList) ql);
         context.startActivity(intent);
     }

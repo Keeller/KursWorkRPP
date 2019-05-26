@@ -3,26 +3,16 @@ package com.example.myapplication;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.ContextMenu;
-import android.view.Menu;
-import android.view.TextureView;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.TextView;
 
-import com.example.myapplication.model.Question;
 import com.example.myapplication.model.Test;
-import com.example.myapplication.model.User;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
-
-public class Main2Activity extends AppCompatActivity {
+public class TestList extends AppCompatActivity {
 
     ListView listview;
     Model model;
@@ -61,7 +51,7 @@ public class Main2Activity extends AppCompatActivity {
 
     public void login(View view)
     {
-        Intent intent=new Intent(this,Main8Activity.class);
+        Intent intent=new Intent(this, AutoHookForm.class);
         intent.putExtra("list",(ArrayList)list);
         startActivity(intent);
         finish();
@@ -71,7 +61,7 @@ public class Main2Activity extends AppCompatActivity {
 
     public void InsData(View view)
     {
-        Intent intent=new Intent(this,Main4Activity.class);
+        Intent intent=new Intent(this, InsertTestForm.class);
         intent.putExtra("list",(ArrayList)list);
         startActivity(intent);
         finish();
@@ -85,7 +75,7 @@ public class Main2Activity extends AppCompatActivity {
 
     public void Search(View view)
     {
-        Intent intent=new Intent(this,Main10Activity.class);
+        Intent intent=new Intent(this, SearchForm.class);
         intent.putExtra("list",(ArrayList)list);
         startActivity(intent);
         finish();

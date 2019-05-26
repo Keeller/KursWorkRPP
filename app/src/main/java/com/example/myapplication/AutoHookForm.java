@@ -12,11 +12,11 @@ import com.example.myapplication.model.User;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main8Activity extends AppCompatActivity {
+public class AutoHookForm extends AppCompatActivity {
 
     private String login;
     private String password;
-    AsynTask7 as;
+    AutoHookRequest as;
     ArrayList<Test> listl;
 
     public String getLogin() {
@@ -49,7 +49,7 @@ public class Main8Activity extends AppCompatActivity {
         EditText etpass=(EditText)findViewById(R.id.pass);
         login=etlog.getText().toString();
         password=etpass.getText().toString();
-        as=new AsynTask7();
+        as=new AutoHookRequest();
         as.execute(this);
 
     }
@@ -58,7 +58,7 @@ public class Main8Activity extends AppCompatActivity {
     {
         if(list.size()!=0) {
             Model.user = list.get(0);
-            Intent intent=new Intent(this,Main2Activity.class);
+            Intent intent=new Intent(this, TestList.class);
             intent.putExtra("list",(ArrayList)listl);
             startActivity(intent);
         }
@@ -66,7 +66,7 @@ public class Main8Activity extends AppCompatActivity {
             {
                 Model.user=new User();
                 Model.user.setPremission(0);
-                Intent intent=new Intent(this,Main2Activity.class);
+                Intent intent=new Intent(this, TestList.class);
                 intent.putExtra("list",(ArrayList)listl);
                 startActivity(intent);
 

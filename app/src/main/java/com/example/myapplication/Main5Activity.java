@@ -3,13 +3,9 @@ package com.example.myapplication;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.Toast;
 
 import com.example.myapplication.model.Test;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +22,7 @@ public class Main5Activity extends AppCompatActivity {
         this.curr = curr;
     }
 
-    private  AsynTask4 as;
+    private TestDeleteRequest as;
 
 
 
@@ -45,7 +41,7 @@ public class Main5Activity extends AppCompatActivity {
 
     public void finisher(List<Test> list)
     {
-        Intent intent=new Intent(this,Main2Activity.class);
+        Intent intent=new Intent(this, TestList.class);
         intent.putExtra("list",(ArrayList)list);
         startActivity(intent);
         finish();
@@ -55,7 +51,7 @@ public class Main5Activity extends AppCompatActivity {
     public void onBackPressed() {
         if(as!=null)
             as.cancel(true);
-        Intent intent=new Intent(this,Main2Activity.class);
+        Intent intent=new Intent(this, TestList.class);
         intent.putExtra("list",(ArrayList)list);
         startActivity(intent);
         finish();
