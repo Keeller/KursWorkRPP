@@ -27,6 +27,7 @@ public class Model extends BaseAdapter
     List<Test> list;
     public static int current_position=0;
     private Test curr;
+    TestList testList;
 
     public Test getCurr() {
         return curr;
@@ -49,10 +50,16 @@ public class Model extends BaseAdapter
 
 
 
+
     }
 
+    public TestList getTestList() {
+        return testList;
+    }
 
-
+    public void setTestList(TestList testList) {
+        this.testList = testList;
+    }
 
     @Override
     public int getCount() {
@@ -91,6 +98,8 @@ public class Model extends BaseAdapter
                 curr=list.get(position);
                 TestDeleteRequest as=new TestDeleteRequest();
                 as.execute(Model.this);
+
+
             }
         });
 
@@ -138,6 +147,9 @@ public class Model extends BaseAdapter
         Intent intent = new Intent(context, TestList.class);
         intent.putExtra("list", (ArrayList) ql);
         context.startActivity(intent);
+        this.testList.finish();
+
+
     }
 
 

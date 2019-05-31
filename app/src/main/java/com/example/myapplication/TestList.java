@@ -30,6 +30,7 @@ public class TestList extends AppCompatActivity {
 
         listview = (ListView) findViewById(R.id.listview);
         model =new Model(this,list);
+        model.setTestList(this);
         if(Model.user!=null) {
             if (Model.user.getPremission() > 0) {
                 Button btnk = (Button) findViewById(R.id.btOk);
@@ -58,7 +59,7 @@ public class TestList extends AppCompatActivity {
 
     }
 
-
+    
     public void InsData(View view)
     {
         Intent intent=new Intent(this, InsertTestForm.class);
@@ -82,4 +83,9 @@ public class TestList extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish();
+    }
 }
